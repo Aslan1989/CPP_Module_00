@@ -6,7 +6,7 @@
 /*   By: aisaev <aisaev@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 13:02:44 by aisaev            #+#    #+#             */
-/*   Updated: 2025/09/20 15:11:23 by aisaev           ###   ########.fr       */
+/*   Updated: 2025/09/20 15:13:50 by aisaev           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,23 @@ bool Contact::isEmpty() const {
 	return firstName.empty();
 }
 
-void Contact::setFirstName(const std::string &fn)
+void Contact::setFirstName(const std::string& fn)
 {
 	firstName = fn;
 }
-void Contact::setLastName(const std::string &ln)
+void Contact::setLastName(const std::string& ln)
 {
 	lastName = ln;
 }
-void Contact::setNickname(const std::string &nn)
+void Contact::setNickname(const std::string& nn)
 {
 	nickname = nn;
 }
-void Contact::setPhoneNumber(const std::string &pn)
+void Contact::setPhoneNumber(const std::string& pn)
 {
 	phoneNumber = pn;
 }
-void Contact::setDarkestSecret(const std::string &ds)
+void Contact::setDarkestSecret(const std::string& ds)
 {
 	darkestSecret = ds;
 }
