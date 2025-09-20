@@ -6,7 +6,7 @@
 /*   By: aisaev <aisaev@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 13:02:06 by aisaev            #+#    #+#             */
-/*   Updated: 2025/09/20 15:33:41 by aisaev           ###   ########.fr       */
+/*   Updated: 2025/09/20 15:35:39 by aisaev           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ int main()
 					break;
 				}
 				std::cout << "Invalid phone. Use digits and optional leading '+'.\n";
-				c.setPhoneNumber(raw);
 			}
 			c.setDarkestSecret(promptField("Darkest Secret"));
 			phoneBook.addContact(c);
