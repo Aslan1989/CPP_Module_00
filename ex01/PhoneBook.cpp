@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aisaev <aisaev@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: aslan <aslan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 13:02:18 by aisaev            #+#    #+#             */
-/*   Updated: 2025/09/20 14:45:28 by aisaev           ###   ########.fr       */
+/*   Updated: 2025/11/03 17:54:01 by aslan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,18 @@ static std::string formatField(const std::string &field)
 
 void PhoneBook::displayContacts() const
 {
+	int	i = 0;
 	std::cout << std::setw(10) << "Index" << "|"
 			  << std::setw(10) << "First Name" << "|"
 			  << std::setw(10) << "Last Name" << "|"
 			  << std::setw(10) << "Nickname" << std::endl;
-	for (int i = 0; i < count; i++)
+	while (i < count)
 	{
 		std::cout << std::setw(10) << i + 1 << "|"
 				  << std::setw(10) << formatField(contacts[i].getFirstName()) << "|"
 				  << std::setw(10) << formatField(contacts[i].getLastName()) << "|"
 				  << std::setw(10) << formatField(contacts[i].getNickname()) << std::endl;
+		i++;		  
 	}
 }
 

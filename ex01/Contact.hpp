@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aisaev <aisaev@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: aslan <aslan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 13:02:55 by aisaev            #+#    #+#             */
-/*   Updated: 2025/09/20 15:10:41 by aisaev           ###   ########.fr       */
+/*   Updated: 2025/11/03 20:11:20 by aslan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define CONTACT_HPP
 
 #include <string>
+#include <iostream>
+#include <string>
+#include <sstream>
 
 class Contact
 {
