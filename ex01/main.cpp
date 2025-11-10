@@ -6,7 +6,7 @@
 /*   By: aslan <aslan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 13:02:06 by aisaev            #+#    #+#             */
-/*   Updated: 2025/11/10 18:22:01 by aslan            ###   ########.fr       */
+/*   Updated: 2025/11/10 18:44:56 by aslan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,12 @@ static std::string promptField(const std::string &field)
 	do
 	{
 		std::cout << field << ": ";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			// If reading failed (Ctrl+D), clear flags and return empty string
+			std::cin.clear();
+			return "";
+		}
 	}
 	while (input.empty());
 	return input;
@@ -36,9 +41,13 @@ static std::string promptField(const std::string &field)
 
 static bool parseInt(const std::string& s, int& out)
 {
+	// std::istringstream lets us use the >> operator on strings (like std::cin).
 	std::istringstream iss(s);
 	int x;
+	int extra;
 	if (!(iss >> x))
+		return false;
+	if (iss >> extra)
 		return false;
 	out = x;
 	return true;
@@ -74,15 +83,7 @@ int main()
 			c.setFirstName(promptField("First Name"));
 			c.setLastName(promptField("Last Name"));
 			c.setNickname(promptField("Nickname"));
-			for (;;)
-			{
-				std::string raw = promptField("Phone Number");
-				if (!raw.empty()) {
-					c.setPhoneNumber(raw);
-					break;
-				}
-				std::cout << "Invalid phone. Use digits and optional leading '+'.\n";
-			}
+			c.setPhoneNumber(promptField("Phone Number"));
 			c.setDarkestSecret(promptField("Darkest Secret"));
 			phoneBook.addContact(c);
 		}
