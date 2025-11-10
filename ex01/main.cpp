@@ -6,7 +6,7 @@
 /*   By: aslan <aslan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 13:02:06 by aisaev            #+#    #+#             */
-/*   Updated: 2025/11/03 20:30:52 by aslan            ###   ########.fr       */
+/*   Updated: 2025/11/03 20:38:25 by aslan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,20 @@ static bool isValidPhone(const std::string& normalized)
 	return digits >= 5 && digits <= 15;
 }
 
+/**
+ * @brief Main function of the PhoneBook program.
+ *
+ * This function controls the main menu loop.
+ * It waits for the user to type a command:
+ *  - ADD    → create a new contact
+ *  - SEARCH → show and select a contact
+ *  - EXIT   → quit the program
+ *
+ * The program keeps running until the user types EXIT
+ * or sends an end-of-file signal (Ctrl+D).
+ *
+ * @return 0 when the program ends successfully.
+ */
 int main()
 {
 	PhoneBook phoneBook;

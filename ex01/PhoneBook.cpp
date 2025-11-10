@@ -6,13 +6,11 @@
 /*   By: aslan <aslan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 13:02:18 by aisaev            #+#    #+#             */
-/*   Updated: 2025/11/03 17:54:01 by aslan            ###   ########.fr       */
+/*   Updated: 2025/11/10 17:37:35 by aslan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <iostream>
-#include <iomanip>
 
 PhoneBook::PhoneBook() : count(0), oldest(0) {}
 

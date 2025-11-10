@@ -6,7 +6,7 @@
 /*   By: aslan <aslan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 13:02:55 by aisaev            #+#    #+#             */
-/*   Updated: 2025/11/03 20:11:20 by aslan            ###   ########.fr       */
+/*   Updated: 2025/11/10 17:38:10 by aslan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 #include <string>
 #include <iostream>
-#include <string>
 #include <sstream>
-
+#include <iomanip>
 class Contact
 {
 private:
