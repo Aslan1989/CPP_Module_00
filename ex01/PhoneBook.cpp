@@ -6,14 +6,22 @@
 /*   By: aslan <aslan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 13:02:18 by aisaev            #+#    #+#             */
-/*   Updated: 2025/11/10 17:37:35 by aslan            ###   ########.fr       */
+/*   Updated: 2025/11/10 18:25:06 by aslan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
+/**
+ * @brief Constructor: sets count and oldest to zero (empty phone book).
+ */
 PhoneBook::PhoneBook() : count(0), oldest(0) {}
 
+/**
+ * @brief Add a contact. If there is still space (less than 8),
+ * the contact is added at the end. Otherwise, overwrite the oldest one.
+ * go to the next slot in a circle
+ */
 void PhoneBook::addContact(const Contact &newContact)
 {
 	if (count < 8)
@@ -52,6 +60,11 @@ void PhoneBook::displayContacts() const
 	}
 }
 
+/**
+ * @brief Display one contact in detail by its index (1-based).
+ * If the index is invalid, print an error message.
+ * convert from 1-based to 0-based
+ */
 void PhoneBook::displayContact(int index) const
 {
 	index -= 1;

@@ -6,7 +6,7 @@
 /*   By: aslan <aslan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 13:02:06 by aisaev            #+#    #+#             */
-/*   Updated: 2025/11/03 20:38:25 by aslan            ###   ########.fr       */
+/*   Updated: 2025/11/10 18:22:01 by aslan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,50 +34,14 @@ static std::string promptField(const std::string &field)
 	return input;
 }
 
-
 static bool parseInt(const std::string& s, int& out)
 {
 	std::istringstream iss(s);
 	int x;
-	char extra;
 	if (!(iss >> x))
-		return false;
-	if (iss >> extra)
 		return false;
 	out = x;
 	return true;
-}
-
-/**
- * @brief Check if a phone number is valid.
- *
- * The function makes sure that the phone number:
- * - is not empty
- * - may start with a '+' sign (only one)
- * - contains only digits (0–9)
- * - has between 5 and 15 digits in total
- *
- * @param normalized A string that should already contain only '+' and digits.
- * @return true if the phone number is valid, false otherwise.
- */
-static bool isValidPhone(const std::string& normalized)
-{
-	std::string::size_type i = 0;
-	const std::string::size_type digits = normalized.size();
-	if (normalized.empty())
-		return false;
-	if (normalized[0] == '+')
-	{
-		if (normalized.size() == 1)
-		return false;
-		i = 1;
-	}
-	for (; i < normalized.size(); ++i)
-	{
-		if (!std::isdigit(normalized[i]))
-			return false;
-	}
-	return digits >= 5 && digits <= 15;
 }
 
 /**
@@ -113,7 +77,7 @@ int main()
 			for (;;)
 			{
 				std::string raw = promptField("Phone Number");
-				if (!raw.empty() && isValidPhone(raw)) {
+				if (!raw.empty()) {
 					c.setPhoneNumber(raw);
 					break;
 				}
